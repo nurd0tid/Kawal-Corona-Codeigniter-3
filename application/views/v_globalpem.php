@@ -9,7 +9,7 @@
     }).addTo(map);
 
     <?php foreach ($globalpem as $value) { ?>
-      L.marker([<?php echo $value['long'] ?>, <?php echo $value['lat'] ?>]).addTo(map)
+      L.marker([<?php echo $value['lat'] ?>, <?php echo $value['long'] ?>]).addTo(map)
         .bindPopup("Provinsi : <?php echo $value['countryRegion'] ?><br>" +
           "Kasus Positif : <?php echo $value['confirmed'] ?><br>" +
           "Kasus Sembuh : <?php echo $value['recovered'] ?><br>" +
