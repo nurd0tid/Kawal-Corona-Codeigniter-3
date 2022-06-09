@@ -8,12 +8,10 @@ class Home extends CI_Controller
 
   public function index()
   {
-    $nasional = json_decode(file_get_contents('https://covid19.mathdro.id/api/countries/id'), true);
-    $provinsi = json_decode(file_get_contents('https://banuacoders.com/api/pico/provinsi'), true);
+    $nasional = json_decode(file_get_contents('https://dekontaminasi.com/api/id/covid19/stats'), true);
     $data = [
       'title' => 'COVID-19 Nasional',
       'nasional' => $nasional,
-      'provinsi' => $provinsi,
       'isi'   => 'v_home',
     ];
 

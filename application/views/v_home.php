@@ -15,7 +15,7 @@
           <!-- small box -->
           <div class="small-box bg-warning">
             <div class="inner">
-              <h3><?php echo $nasional['confirmed']['value'] ?><sup style="font-size: 20px"></sup></h3>
+              <h3><?php echo $nasional['numbers']['infected'] ?><sup style="font-size: 20px"></sup></h3>
 
               <p>Total Positif</p>
             </div>
@@ -29,7 +29,7 @@
           <!-- small box -->
           <div class="small-box bg-success">
             <div class="inner">
-              <h3><?php echo $nasional['recovered']['value']; ?></h3>
+              <h3><?php echo $nasional['numbers']['recovered']; ?></h3>
 
               <p>Total Sembuh</p>
             </div>
@@ -43,7 +43,7 @@
           <!-- small box -->
           <div class="small-box bg-danger">
             <div class="inner">
-              <h3><?php echo $nasional['deaths']['value']; ?></h3>
+              <h3><?php echo $nasional['numbers']['fatal']; ?></h3>
 
               <p>Total Meninggal</p>
             </div>
@@ -68,21 +68,19 @@
                     <th>NO.</th>
                     <th>Provinsi</th>
                     <th class="">Positif</th>
-                    <th>Dirawat</th>
                     <th>Sembuh</th>
                     <th>Meninggal</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php $no = 1;
-                  foreach ($provinsi['data'] as $data) : ?>
+                  foreach ($nasional['regions'] as $data) : ?>
                     <tr>
                       <td><?php echo $no++; ?></td>
-                      <td><?php echo $data['provinsi']; ?></td>
-                      <td><?php echo $data['positif']; ?></td>
-                      <td><?php echo $data['dalam_perawatan']; ?></td>
-                      <td><?php echo $data['sembuh']; ?></td>
-                      <td><?php echo $data['meninggal']; ?></td>
+                      <td><?php echo $data['name']; ?></td>
+                      <td><?php echo $data['numbers']['infected']; ?></td>
+                      <td><?php echo $data['numbers']['recovered']; ?></td>
+                      <td><?php echo $data['numbers']['fatal']; ?></td>
                     </tr>
                   <?php endforeach; ?>
                 </tbody>
