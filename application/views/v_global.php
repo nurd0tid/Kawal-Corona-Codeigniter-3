@@ -15,7 +15,7 @@
           <!-- small box -->
           <div class="small-box bg-warning">
             <div class="inner">
-              <h3><?php echo $positif['value']; ?><sup style="font-size: 20px"></sup></h3>
+              <h3><?php echo $global['TotalConfirmed']; ?><sup style="font-size: 20px"></sup></h3>
 
               <p>Total Positif</p>
             </div>
@@ -29,7 +29,7 @@
           <!-- small box -->
           <div class="small-box bg-success">
             <div class="inner">
-              <h3><?php echo $sembuh['value']; ?></h3>
+              <h3><?php echo $global['TotalRecovered']; ?></h3>
 
               <p>Total Sembuh</p>
             </div>
@@ -43,7 +43,7 @@
           <!-- small box -->
           <div class="small-box bg-danger">
             <div class="inner">
-              <h3><?php echo $meninggal['value']; ?></h3>
+              <h3><?php echo $global['TotalDeaths']; ?></h3>
 
               <p>Total Meninggal</p>
             </div>
@@ -53,7 +53,7 @@
           </div>
         </div>
       </div>
-      <center> Sumber Data Berdasarkan : Kementerian Kesehatan & JHU.</center><br>
+      <center> Build With ❤ By <a href="https://nurd0tid.netlify.app/">nurd0tid</a>.</center><br>
       <div class="row">
         <div class="col-lg-12 col-12">
           <div class="card card-primary">
@@ -73,22 +73,23 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <?php $no=1; foreach ($global as $key => $value) : ?>
+                  <?php $no = 1;
+                  foreach ($global2 as $value) : ?>
                     <tr>
                       <td><?php echo $no++; ?></td>
-                      <td><?php echo $value['attributes']['Country_Region']; ?></td>
-                      <td><?php echo $value['attributes']['Confirmed']; ?></td>
-                      <td><?php echo $value['attributes']['Deaths']; ?></td>
-                      <td><?php echo $value['attributes']['Recovered']; ?></td>
+                      <td><?php echo $value['countryRegion']; ?></td>
+                      <td><?php echo $value['confirmed']; ?></td>
+                      <td><?php echo $value['recovered']; ?></td>
+                      <td><?php echo $value['deaths']; ?></td>
                     </tr>
                   <?php endforeach; ?>
                 </tbody>
-                </table>
-              </div>
+              </table>
             </div>
           </div>
         </div>
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
+      </div>
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->

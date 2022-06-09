@@ -5,7 +5,7 @@
     Anything you want
   </div>
   <!-- Default to the left -->
-  <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+  <strong>Source in Github <a href="https://github.com/nurd0tid/Kawal-Corona-Codeigniter-3/">nurd0tid</a>.</strong>
 </footer>
 </div>
 <!-- ./wrapper -->
@@ -27,7 +27,7 @@
 <script src="<?php echo base_url() ?>assets/dist/js/demo.js"></script>
 <!-- page script -->
 <script>
-  $(function () {
+  $(function() {
     $("#example1").DataTable({
       "responsive": true,
       "autoWidth": false,
@@ -44,4 +44,5 @@
   });
 </script>
 </body>
+
 </html>

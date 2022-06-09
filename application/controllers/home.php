@@ -21,9 +21,9 @@ class Home extends CI_Controller
     $this->load->view('layout/v_wrapper', $data);
   }
 
-  public function v_pemetaan()
+  public function petalokal()
   {
-    $pemetaan = json_decode(file_get_contents('https://services5.arcgis.com/VS6HdKS0VfIhv8Ct/arcgis/rest/services/COVID19_Indonesia_per_Provinsi/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json'), true);
+    $pemetaan = json_decode(file_get_contents('https://covid19.mathdro.id/api/countries/id/confirmed'), true);
     $data = [
       'pemetaan' => $pemetaan,
       'isi'   => 'v_pemetaan',
@@ -32,26 +32,23 @@ class Home extends CI_Controller
     $this->load->view('layout/v_wrapper', $data);
   }
 
-  public function v_global()
+  public function global()
   {
-    $global = json_decode(file_get_contents('https://api.kawalcorona.com/'), true);
-    $positif = json_decode(file_get_contents('https://api.kawalcorona.com/positif'), true);
-    $sembuh = json_decode(file_get_contents('https://api.kawalcorona.com/sembuh'), true);
-    $meninggal = json_decode(file_get_contents('https://api.kawalcorona.com/meninggal'), true);
+    $global = json_decode(file_get_contents('https://api.covid19api.com/world/total'), true);
+    $global2 = json_decode(file_get_contents('https://covid19.mathdro.id/api/confirmed'), true);
+
     $data = [
       'title' => 'COVID-19 Global',
       'global' => $global,
-      'positif' => $positif,
-      'sembuh' => $sembuh,
-      'meninggal' => $meninggal,
+      'global2' => $global2,
       'isi'   => 'v_global',
     ];
     $this->load->view('layout/v_wrapper', $data);
   }
 
-  public function v_globalpem()
+  public function petaglobal()
   {
-    $globalpem = json_decode(file_get_contents('https://api.kawalcorona.com/'), true);
+    $globalpem = json_decode(file_get_contents('https://covid19.mathdro.id/api/confirmed'), true);
     $data = [
       'globalpem' => $globalpem,
       'isi'   => 'v_globalpem',

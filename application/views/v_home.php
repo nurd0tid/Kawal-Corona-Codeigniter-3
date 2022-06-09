@@ -53,7 +53,7 @@
           </div>
         </div>
       </div>
-      <center> Sumber Data Berdasarkan : Kementerian Kesehatan & JHU.</center><br>
+      <center> Build With ❤ By <a href="https://nurd0tid.netlify.app/">nurd0tid</a>.</center><br>
       <div class="row">
         <div class="col-lg-12 col-12">
           <div class="card card-primary">

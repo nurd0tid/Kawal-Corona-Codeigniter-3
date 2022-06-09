@@ -1,24 +1,19 @@
 <div class="col-sm-12">
-  <div id="mapid" style="height: 550px;"></div>
+  <div id="map" style="height: 550px;"></div>
   <script>
-  var mymap = L.map('mapid').setView([-2.582764, 117.704316], 2);
+    var map = L.map('map').setView([-2.582764, 117.704316], 2);
 
-  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-    maxZoom: 18,
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-    '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-    'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    id: 'mapbox/streets-v11',
-    tileSize: 512,
-    zoomOffset: -1
-  }).addTo(mymap);
+    var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
 
-  <?php foreach ($globalpem as $key => $value) { ?>
-    L.marker([<?php echo $value['attributes']['Long_'] ?>, <?php echo $value['attributes']['Lat'] ?>]).addTo(mymap)
-    .bindPopup("Provinsi : <?php echo $value['attributes']['Country_Region'] ?><br>"+
-    "Kasus Positif : <?php echo $value['attributes']['Confirmed'] ?><br>"+
-    "Kasus Sembuh : <?php echo $value['attributes']['Recovered'] ?><br>"+
-    "Kasus Meninggal : <?php echo $value['attributes']['Deaths'] ?><br>");
+    <?php foreach ($globalpem as $value) { ?>
+      L.marker([<?php echo $value['long'] ?>, <?php echo $value['lat'] ?>]).addTo(map)
+        .bindPopup("Provinsi : <?php echo $value['countryRegion'] ?><br>" +
+          "Kasus Positif : <?php echo $value['confirmed'] ?><br>" +
+          "Kasus Sembuh : <?php echo $value['recovered'] ?><br>" +
+          "Kasus Meninggal : <?php echo $value['deaths'] ?><br>");
     <?php } ?>
-    </script>
-  </div>
+  </script>
+</div>
