@@ -4,6 +4,8 @@
 The Covid19 Virus Data Information Center Website Open Source Build With Codeigniter 3, Both Locally (Indonesia) and Globally,
 I no longer develop this application, to get free covid19 data is no longer possible, and the data obtained may not be updated.
 
+For Demo : [Kawal Corona](https://kawalcorona19.herokuapp.com/)
+
 # Fiture
 - [x] Data Nasional
 - [x] Mapping Nasional
