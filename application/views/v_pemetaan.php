@@ -8,12 +8,13 @@
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
-    <?php foreach ($pemetaan as $value) { ?>
-      L.marker([<?php echo $value['long'] ?>, <?php echo $value['lat'] ?>]).addTo(map)
-        .bindPopup("Provinsi : <?php echo $value['countryRegion'] ?><br>" +
-          "Kasus Positif : <?php echo $value['confirmed'] ?><br>" +
-          "Kasus Sembuh : <?php echo $value['recovered'] ?><br>" +
-          "Kasus Meninggal : <?php echo $value['deaths'] ?><br>");
+    <?php foreach ($lokalpem as $value) { ?>
+      L.marker([<?php echo $value['latitude'] ?>, <?php echo $value['longitude'] ?>]).addTo(map)
+        .bindPopup("Provinsi : <?php echo $value['Provinsi'] ?><br>" +
+          "Kasus Positif : <?php echo $value['Confirmed'] ?><br>" +
+          "Kasus Sembuh : <?php echo $value['Recovered'] ?><br>" +
+          "Kasus Meninggal : <?php echo $value['Deaths'] ?><br>");
     <?php } ?>
   </script>
+
 </div>

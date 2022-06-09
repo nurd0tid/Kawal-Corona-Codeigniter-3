@@ -21,12 +21,13 @@ class Home extends CI_Controller
 
   public function petalokal()
   {
-    $pemetaan = json_decode(file_get_contents('https://covid19.mathdro.id/api/countries/id/confirmed'), true);
+    $lokalpem = json_decode(file_get_contents('https://lintangwisesa.github.io/Indonesia-Covid19-Maps/data/provinsi/all.json'), true);
     $data = [
-      'pemetaan' => $pemetaan,
+      'lokalpem' => $lokalpem,
       'isi'   => 'v_pemetaan',
     ];
-
+    // 
+    // var_dump($data);
     $this->load->view('layout/v_wrapper', $data);
   }
 
