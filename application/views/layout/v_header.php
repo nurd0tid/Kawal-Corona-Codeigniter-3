@@ -3,7 +3,7 @@
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
     <div class="container">
-      <a href=<?php echo base_url('welcome'); ?> class="navbar-brand">
+      <a href=<?php echo base_url('home'); ?> class="navbar-brand">
 
         <span class="brand-text font-weight-light">Kawal Corona</span>
       </a>

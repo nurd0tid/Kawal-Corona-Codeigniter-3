@@ -8,8 +8,8 @@ class Home extends CI_Controller
 
   public function index()
   {
-    $nasional = json_decode(file_get_contents('https://api.kawalcorona.com/indonesia'), true);
-    $provinsi = json_decode(file_get_contents('https://api.kawalcorona.com/indonesia/provinsi'), true);
+    $nasional = json_decode(file_get_contents('https://covid19.mathdro.id/api/countries/id'), true);
+    $provinsi = json_decode(file_get_contents('https://banuacoders.com/api/pico/provinsi'), true);
     $data = [
       'title' => 'COVID-19 Nasional',
       'nasional' => $nasional,
@@ -17,6 +17,7 @@ class Home extends CI_Controller
       'isi'   => 'v_home',
     ];
 
+    // var_dump($data);
     $this->load->view('layout/v_wrapper', $data);
   }
 

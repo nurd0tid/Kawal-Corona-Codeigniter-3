@@ -15,7 +15,7 @@
           <!-- small box -->
           <div class="small-box bg-warning">
             <div class="inner">
-              <h3><?php echo $nasional['0']['positif']; ?><sup style="font-size: 20px"></sup></h3>
+              <h3><?php echo $nasional['confirmed']['value'] ?><sup style="font-size: 20px"></sup></h3>
 
               <p>Total Positif</p>
             </div>
@@ -29,7 +29,7 @@
           <!-- small box -->
           <div class="small-box bg-success">
             <div class="inner">
-              <h3><?php echo $nasional['0']['sembuh']; ?></h3>
+              <h3><?php echo $nasional['recovered']['value']; ?></h3>
 
               <p>Total Sembuh</p>
             </div>
@@ -43,7 +43,7 @@
           <!-- small box -->
           <div class="small-box bg-danger">
             <div class="inner">
-              <h3><?php echo $nasional['0']['meninggal']; ?></h3>
+              <h3><?php echo $nasional['deaths']['value']; ?></h3>
 
               <p>Total Meninggal</p>
             </div>
@@ -68,27 +68,30 @@
                     <th>NO.</th>
                     <th>Provinsi</th>
                     <th class="">Positif</th>
+                    <th>Dirawat</th>
                     <th>Sembuh</th>
                     <th>Meninggal</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <?php $no=1; foreach ($provinsi as $key => $value) : ?>
+                  <?php $no = 1;
+                  foreach ($provinsi['data'] as $data) : ?>
                     <tr>
                       <td><?php echo $no++; ?></td>
-                      <td><?php echo $value['attributes']['Provinsi']; ?></td>
-                      <td><?php echo $value['attributes']['Kasus_Posi']; ?></td>
-                      <td><?php echo $value['attributes']['Kasus_Semb']; ?></td>
-                      <td><?php echo $value['attributes']['Kasus_Meni']; ?></td>
+                      <td><?php echo $data['provinsi']; ?></td>
+                      <td><?php echo $data['positif']; ?></td>
+                      <td><?php echo $data['dalam_perawatan']; ?></td>
+                      <td><?php echo $data['sembuh']; ?></td>
+                      <td><?php echo $data['meninggal']; ?></td>
                     </tr>
                   <?php endforeach; ?>
                 </tbody>
-                </table>
-              </div>
+              </table>
             </div>
           </div>
         </div>
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
+      </div>
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
